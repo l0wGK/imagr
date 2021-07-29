@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Imagr - Home</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+            body {
+                background-color: #393a4e;
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            #name_big {
+                font-size: 70px;
+                text-align: center;
+                color: #fbfbf3;
+            }
+
+            button {
+                padding: 1.5rem 3rem;
+                margin: 0;
+            }
+
+            #upload_button {
+                font-size: 30px;
+                background-color: #393a4e;
+                border: 2px solid #fbfbf3;
+                color: #fbfbf3;
+                border-radius: 3rem;
+                overflow: hidden;
+                box-shadow: 2px 2px #1f1f29;
+                cursor: pointer;
+            }
+
+            #upload_button:hover {
+                box-shadow: 0 5px 8px 0 #1f1f29,0 3px 10px 0 #1f1f29 !important;
+                position: relative;
+                top: -1px;
+            }
+
+            footer {
+                position: fixed;
+                display: block;
+                width: 100%;
+                left: 0;
+                padding: 10x;
+                bottom: 0;
+                text-align: center;
+                background-color: #42425c;
+            }
+
+            form {
+                text-decoration: none;
+                text-align: center;
+                color: #fbfbf3;
+            }
+        </style>
+    </header>
+
+    <body>
+        <p id="name_big">Imagr</p>
+        <form enctype="multipart/form-data" action="" method="POST">
+            {% csrf_token %}
+            <input type="file" name="img" id="img" required/>
+            <br><br><br>
+            <center><button id="upload_button" type='submit'>Upload</button></center>
+        </form>
+        <div align='center'>
+            <h3><a href='{{ new_url }}' style="color: #fbfbf3;text-decoration: none;">{{ new_url }}</a></h3>
+        </div>
+
+        <footer>A <b>Lowe Garmark</b> Production</footer>
+    </body>
+</html>
